@@ -30,7 +30,7 @@ node{
         
         def dockerRun = ' docker run  -d -p 8080:8080 --name java-docker-web-app manjunk/java-docker-web-app'
          
-         sshagent(['DOCKER_SERVER']) {
+         sshagent(['Tomcat-Server_Agent']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.64.237.2 docker stop java-docker-web-app || true'
           sh 'ssh  ubuntu@3.64.237.2 docker rm java-docker-web-app || true'
           sh 'ssh  ubuntu@3.64.237.2 docker rmi -f  $(docker images -q) || true'
