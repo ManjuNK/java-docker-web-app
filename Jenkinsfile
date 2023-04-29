@@ -28,7 +28,7 @@ node{
      
       stage('Run Docker Image In Dev Server'){
         
-        def dockerRun = ' docker run  -d -p 8080:8080 --name java-docker-web-app manjunk/java-docker-web-app'
+        def dockerRun = ' docker run  -d -p 6060:6060 --name java-docker-web-app manjunk/java-docker-web-app'
          
          sshagent(['Tomcat-Server_Agent']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.64.237.2 docker stop java-docker-web-app || true'
